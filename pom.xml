@@ -41,11 +41,11 @@
     <!--distribution-->
     <distributionManagement>
         <snapshotRepository>
-            <id>jddsjSnapshots</id>
+            <id>snapshots</id>
             <url>http://111.231.86.41:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
         <repository>
-            <id>jddsjReleases</id>
+            <id>releases</id>
             <url>http://111.231.86.41:8081/nexus/content/repositories/releases/</url>
         </repository>
     </distributionManagement>
