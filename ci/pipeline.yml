@@ -1,0 +1,33 @@
+resources:
+- name: excel-generator
+  type: git
+  source:
+    uri: https://github.com/gezhiwei8899/testExcel.git
+    branch: master
+    private_key: {{git-private-key}}
+    git_config:
+    - name: http.sslVerify
+      value: false
+    username: {{git-user}}
+    password: {{git_pwd}}
+
+jobs:
+- name: build
+  plan:
+  - get: excel-generator
+  - task: artifacory
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: ccr.ccs.tencentyun.com/gezhiwei8899/maven-ci, tag: 1.0.0}
+      inputs:
+        - name: excel-generator
+      run:
+        dir: excel-generator
+        path: test-excel/ci/build.sh
+      outputs:
+        - name: excel-generator-core
+
+
+
