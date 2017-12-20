@@ -25,7 +25,7 @@ jobs:
         - name: excel-generator
       run:
         dir: excel-generator
-        path: testExcel/ci/build.sh
+        path: ci/build.sh
       outputs:
         - name: excel-generator-core
 
