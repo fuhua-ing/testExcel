@@ -18,3 +18,4 @@ target
 # Maven
 release.properties
 *.releaseBackup
+/ci/credentials.yml
