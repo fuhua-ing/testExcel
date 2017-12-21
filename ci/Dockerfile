@@ -4,7 +4,7 @@
 # Jenkins 1.643
 # Nano 2.2.6-1ubuntu1
 
-FROM ubuntu:16.04
+FROM ccr.ccs.tencentyun.com/qcloud/ubuntu:16.04
 
 MAINTAINER Chris Gruel (christopher_a_gruel@homedepot.com)
 
