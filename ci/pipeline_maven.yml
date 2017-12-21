@@ -37,7 +37,7 @@ jobs:
         - name: excel-generator-jar
   - put: docker-image
     params:
-      build: excel-generator/ci/Dockerfile
+      build: excel-generator/ci
 
 
 
