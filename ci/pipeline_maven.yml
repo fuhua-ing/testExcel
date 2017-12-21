@@ -22,7 +22,6 @@ jobs:
 - name: build
   plan:
   - get: excel-generator
-  - get: docker-image
   - task: artifacory
     config:
       platform: linux
