@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -o  -x errexit
 
-cd mybatis-generator-core
+git clone ./mybatis-generator-core ./excel-generator-jar
+
+cd excel-generator-jar
 
 mvn deploy

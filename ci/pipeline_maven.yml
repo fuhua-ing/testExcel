@@ -10,8 +10,6 @@ resources:
       value: false
     username: {{git-user}}
     password: {{git_pwd}}
-
-resources:
 - name: docker-image
   type: docker-image
   source:
@@ -24,6 +22,7 @@ jobs:
 - name: build
   plan:
   - get: excel-generator
+  - get: docker-image
   - task: artifacory
     config:
       platform: linux
@@ -37,20 +36,9 @@ jobs:
         path: ci/build.sh
       outputs:
         - name: excel-generator-jar
-  plan:
-  - get: excel-generator-jar
-  - get: excel-generator
-  - task: build-imagessss
-    config:
-      platform: linux
-      image_resource:
-        type: docker-image
-        source: {repository: docker, tag: latest}
-        inputs:
-          - name: excel-generator-jar
-        - put: docker-image
-          params:
-            build: excel-generator/ci/Dockerfile
+  - put: docker-image
+    params:
+      build: excel-generator/ci/Dockerfile
 
 
 
