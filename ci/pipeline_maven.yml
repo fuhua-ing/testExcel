@@ -47,7 +47,7 @@ jobs:
         type: docker-image
         source: {repository: docker, tag: latest}
         inputs:
-        - name: excel-generator-jar
+          - name: excel-generator-jar
         - put: docker-image
           params:
             build: excel-generator/ci/Dockerfile
